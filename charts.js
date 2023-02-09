@@ -94,27 +94,27 @@ function buildCharts(sample) {
 
 
     // Deliverable 1: 8. Create the trace for the bar chart. 
-    var barData = {
+    var trace = {
 
       x: xticks,
       y: yticks,
-      type: bar
+      type: 'bar',
+      orientation: 'h'
 
     }
 
-    
+    var data =[trace]
 
     // Deliverable 1: 9. Create the layout for the bar chart. 
-    var barLayout = {
-      title: "something",
-      xaxis: "xaxis",
-      yaxis: "yaxis"
-
+    var layout = {
+      title: "Top 10 Cultures Found",
+      xaxis: { title: xticks },
+      yaxis: { title: yticks}
     };
 
     // Deliverable 1: 10. Use Plotly to plot the data with the layout. 
 
-    Plotly.newPlot("bar", barData, barLayout)
+    Plotly.newPlot("bar", data, layout)
 
     // Deliverable 2: 1. Create the trace for the bubble chart.
     var trace1 = {
@@ -136,7 +136,7 @@ function buildCharts(sample) {
 
     // Deliverable 2: 2. Create the layout for the bubble chart.
     var layout = {
-      title: 'Bubble Chart Hover Text',
+      title: 'Bacteria Culters Per Sample',
       showlegend: false,
       height: 600,
       width: 600
@@ -158,7 +158,7 @@ function buildCharts(sample) {
           {range: [2,4], color: "orange" },
           {range: [4,6], color: "yellow" },
           {range: [6,8], color: "green" },
-          {range: [8,10], color: "dark green" },
+          {range: [8,10], color: "green" },
         ]
       }
     }
